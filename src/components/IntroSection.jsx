@@ -1,6 +1,6 @@
 import React from "react";
 import Countdown from "react-countdown";
-import "../styles/Introsection.css"; // Asegúrate de que tienes el archivo CSS adecuado
+import "../styles/IntroSection.css"; // Asegúrate de que tienes el archivo CSS adecuado
 
 const Introsection = () => {
   // Fecha objetivo: 27 de febrero de 2025 a las 12:00h
