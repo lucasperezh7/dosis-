@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Header.css";
 import logoImage from "../assets/logo1.png";
-import mobileLogo from "../assets/logo1.png"; // Nuevo logo para móvil
+import mobileLogo from "../assets/logo2.png"; // Nuevo logo para móvil
 import { FaBars } from "react-icons/fa"; // Icono de menú
 
 const Header = () => {
