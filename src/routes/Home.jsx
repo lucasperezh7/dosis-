@@ -1,17 +1,18 @@
 // src/components/Home.jsx
 import React from "react";
 import Header from "../components/Header";
-import IntroSection from "../components/IntroSection";
-import VideoSection from "../components/VideoSection";
-import Footer from "../components/Footer";
+import Introsection from "../components/IntroSection";
+import TicketSection from "../components/TicketSection";
+import ImageCarousel from "../components/Carrusel";
+import ContactSection from "../components/Contact";
 
 function Home() {
   return (
     <div>
       <Header />
-      <IntroSection />
-      <VideoSection />
-      <Footer />
+      <Introsection />
+      <ImageCarousel />
+      <ContactSection />
     </div>
   );
 }

@@ -1,31 +1,44 @@
-import React, { useState } from "react";
-import "../styles/Header.css"; // Ruta corregida para el archivo CSS
-import logoImage from "../assets/logocopia.png"; // Importación del logo
-import { MdMenu } from "react-icons/md"; // Importa el icono de menú
+import React, { useState, useEffect } from "react";
+import "../styles/Header.css";
+import logoImage from "../assets/logo.png";
+import mobileLogo from "../assets/logo1.png"; // Nuevo logo para móvil
+import { FaBars } from "react-icons/fa"; // Icono de menú
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <header className="header">
       <div className="logo">
-        <img src={logoImage} alt="Logo del artista" />
+        <img src={isMobile ? mobileLogo : logoImage} alt="Logo del artista" />
       </div>
+      {isMobile && (
+        <div className="menu-icon" onClick={toggleMenu}>
+          <FaBars />
+        </div>
+      )}
       {menuOpen && (
-        <nav className="menu">
+        <nav className="dropdown-menu">
           <ul>
             <li>
               <a href="#inicio">Inicio</a>
             </li>
             <li>
-              <a href="#musica">Música</a>
-            </li>
-            <li>
-              <a href="#videos">Videos</a>
+              <a href="#acerca">Acerca de</a>
             </li>
             <li>
               <a href="#contacto">Contacto</a>

@@ -1,0 +1,57 @@
+/* Variables de estilo */
+:root {
+  --carousel-width: 100%;
+  --carousel-max-width: 800px;
+  --carousel-padding: 20px;
+  --image-height: 250px;
+  --image-height-mobile: 200px;
+  --border-radius: 15px;
+  --transition-duration: 0.3s;
+  --opacity-normal: 0.7;
+  --opacity-center: 1;
+  
+   --scale-center: 1.; /* Aumento el tamaño de la imagen central */
+  --scale-lateral: 0.9; /* Reducir ligeramente las imágenes laterales */
+}
+
+/* Estilos generales del carrusel */
+.carousel-container {
+  width: 200vh;
+  max-width: 300vh;
+  margin: 0 auto;
+  overflow: hidden; /* Ocultar las imágenes fuera de la vista */
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+
+/* Estilos de las diapositivas */
+.slick-slide {
+  transition: transform var(--transition-duration) ease-in-out, opacity var(--transition-duration) ease-in-out;
+}
+
+/* Estilo para la diapositiva central */
+.slick-center {
+  transform: scale(var(--scale-center));
+  opacity: var(--opacity-center);
+}
+
+/* Estilo para las diapositivas no centradas */
+.slick-slide:not(.slick-center) {
+  opacity: var(--opacity-normal);
+}
+
+/* Estilo de las imágenes dentro de las diapositivas */
+.carousel-image {
+  width: 100%;
+  height: var(--image-height);
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: transform var(--transition-duration) ease-in-out;
+}
+
+/* Efecto de zoom cuando el cursor pasa sobre la imagen */
+.carousel-image:hover {
+  transform: scale(1.05);
+}
+

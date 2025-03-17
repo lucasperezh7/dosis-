@@ -4,232 +4,150 @@
   justify-content: center;
   align-items: center;
   color: white;
-  padding-top: 20px;
-  height: 12%; /* Ocupa el 10% de la pantalla */
-  top: 0; /* Se posiciona en la parte superior de la pantalla */
-  left: 0; /* Alinea el header con el borde izquierdo */
-  width: 100%; /* Hace que el header ocupe todo el ancho de la pantalla */
-  z-index: 100; /* Asegura que se quede encima de otros elementos */
-  
+  height: 12%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 }
 
-/* Espaciado para que el contenido no se superponga al header */
 body {
-  padding-top: 70px; /* Agrega un espaciado en la parte superior para que el contenido no se oculte detrás del header */
+  padding-top: 70px;
 }
 
-/* Estilos para el logo */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .logo img {
-  width: 150px;
+  width: 400px;
   height: auto;
-  padding-top: 15px; 
-  padding-right: 60px;
+  margin: 0;
 }
 
-/* Estilos para pantallas 4K */
-/* Estilos para pantallas 4K */
+/* Responsive para pantallas grandes (4K) */
 @media (min-width: 2560px) {
-  .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding-top: 20px;
-    height: 12%; /* Mantén el 12% de la altura */
-    top: 0;
-    left: 0;
-    width: 100%; /* Asegura que el header ocupe todo el ancho */
-    z-index: 100;
-  }
-
-  /* Ajuste de espaciado para evitar superposiciones con el header */
-  body {
-    padding-top: 90px; /* Ajusta el espacio para un header más alto en pantallas grandes */
-  }
-
-  /* Estilos para el logo */
   .logo img {
-    width: 250px; /* Tamaño moderado del logo para pantallas 4K */
-    height: auto;
-    padding-top: 15px;
-    padding-right: 60px; /* Mantén un espaciado cómodo al lado derecho */
+    width: 700px;
   }
 }
 
-
-
-/* Responsivo: mostrar el ícono del menú en dispositivos pequeños */
-@media (max-width: 768px) {
-  .menuIcon {
-    display: block;
-  }
-
-  .menu {
-    width: 200px;
+/* Responsive para pantallas de escritorio estándar */
+@media (min-width: 1440px) and (max-width: 2559px) {
+  .logo img {
+    width: 550px;
   }
 }
 
-/* Ocultar el menú en dispositivos grandes */
-@media (min-width: 769px) {
-  .menu {
-    display: none;
+/* Responsive para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .logo img {
+    width: 350px;
   }
 }
 
-
-@media (width: 1024px) {
+/* Responsive para dispositivos móviles */
+@media (max-width: 767px) {
   .header {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    width: 100%; /* Hace que el header ocupe todo el ancho de la pantalla */
-    height: 80px; /* Altura ajustada para portátiles */
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
-    z-index: 100; /* Asegura que el header esté por encima de otros elementos */
-    padding-top: 15px; /* Ajuste de espaciado superior */
+    height: 10%;
   }
 
-  /* Asegura que el logo esté centrado */
-  .logo {
+  .logo img {
+    width: 150px;
+  }
+
+  body {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Centra el logo */
-    margin-left: 40px; /* Ajuste para la posición del logo */
+    right: 20px;
+    top: 20px;
+    color: white;
   }
 
-  .logo img {
-    width: 140px; /* Tamaño adecuado para portátiles */
-    height: auto;
+  .dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 101;
   }
 
-  /* Espaciado para que el contenido no se oculte detrás del header */
-  body {
-    padding-top: 90px; /* Ajuste de espacio para evitar que el contenido quede tapado */
+  .dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .dropdown-menu li {
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .dropdown-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .dropdown-menu a:hover {
+    color: #007BFF;
   }
 }
-
-
 
 @media (width: 768px) {
-  .header {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    
-    left: 0; /* Alinea el header con el borde izquierdo */
-    width: 100%; /* Hace que el header ocupe todo el ancho de la pantalla */
-    height: 80px; /* Altura ajustada para tablets */
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
-    z-index: 100; /* Asegura que el header esté por encima de otros elementos */
-    padding-top: 15px; /* Ajuste de espaciado superior */
-  }
-
-  /* Asegura que el logo esté centrado */
-  .logo {
+  .menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-left: 28px;
+    right: 30px;
+    top: 30px;
+    color: white;
   }
 
-  .logo img {
-    width: 140px; /* Ajusta el tamaño del logo */
-    height: auto;
+  .dropdown-menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 101;
   }
 
-  /* Espaciado para que el contenido no se oculte detrás del header */
-  body {
-    padding-top: 90px; /* Ajuste de espacio para evitar que el contenido quede tapado */
-  }
-}
-
-@media (min-width: 321px) and (max-width: 767px) {
-  /* Elimina cualquier desbordamiento global */
-  html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden; /* Evita el scroll horizontal */
+  .dropdown-menu ul {
+    list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px 0;
   }
 
-  .header {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    width: 100vw; /* Asegura que ocupa exactamente el ancho de la pantalla */
-    height: 80px; /* Altura ajustada para pantallas de tablets y móviles */
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
-    z-index: 100; /* Asegura que el header esté por encima de otros elementos */
-    padding-top: 25px; /* Ajuste de espaciado superior */
-    position: relative; /* Evita que se fije en la pantalla */
+  .dropdown-menu li {
+    padding: 10px 20px;
+    text-align: center;
   }
 
-  /* Asegura que el logo esté centrado */
-  .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Asegura que el contenedor del logo ocupe todo el ancho */
-    position: relative; /* Elimina absolute para evitar desbordamientos */
-    margin: 0; /* Elimina margen lateral extra */
-    margin-left: 50px;
-    transform: none;
+  .dropdown-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
   }
 
-  .logo img {
-    width: 140px; /* Ajusta el tamaño del logo */
-    height: auto;
-    max-width: 100%; /* Evita que la imagen se desborde */
-  }
-
-  /* Asegura que el contenido no se oculte detrás del header */
-  body {
-    padding-top: 90px; /* Ajuste de espacio para evitar que el contenido quede tapado */
+  .dropdown-menu a:hover {
+    color: #007BFF;
   }
 }
-
-
-
-
-@media (max-width: 320px) {
-  /* Elimina cualquier desbordamiento global */
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-  }
-
-  .header {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    padding-top: 70px;
-    width: 100vw; /* Asegura que ocupa todo el ancho */
-    height: 12%;
-    position: relative; /* Asegura que no se quede fijo */
-  }
-
-  /* Asegura que el logo esté centrado */
-  .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Ocupa todo el ancho para centrar contenido */
-  }
-
-  .logo img {
-    width: 120px; /* Tamaño más compacto para pantallas pequeñas */
-    height: auto;
-    padding: 0;
-    max-width: 100%;
-  }
-
-  /* Espaciado para que el contenido no se oculte detrás del header */
-  body {
-    padding-top: 0; /* Elimina el espacio extra */
-  }
-}
-
-

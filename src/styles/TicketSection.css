@@ -1,0 +1,44 @@
+/* ScrollSection.css */
+
+.scroll-section-container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.scrolling-section {
+  text-align: center;
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+.scroll-header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.scroll-link {
+  font-size: 1.2rem;
+  color: #3498db;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #ecf0f1;
+  transition: background-color 0.3s;
+}
+
+.scroll-link:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.target-section {
+  padding: 50px;
+  background-color: #e74c3c;
+  color: white;
+  text-align: center;
+}
+
+.target-header {
+  font-size: 2rem;
+}

@@ -1,73 +1,37 @@
 import React from "react";
-import "../styles/IntroSection.css";
+import Countdown from "react-countdown";
+import "../styles/Introsection.css"; // Asegúrate de que tienes el archivo CSS adecuado
 
-// Importar los iconos de FontAwesome
-import "@fortawesome/fontawesome-free/css/all.min.css"; // Importar los iconos
+const Introsection = () => {
+  // Fecha objetivo: 27 de febrero de 2025 a las 12:00h
+  const targetDate = new Date(2025, 2, 18, 12, 0, 0); // Mes 1 corresponde a febrero (enero es 0)
 
-const IntroSection = () => {
-  return (
-    <>
-      {/* Sección de introducción */}
-      <section className="intro-section">
-        <div className="intro-container">
-          <div className="bio">
-            <h2>Sobre el Artista</h2>
-            <p>
-              Egho es un artista de Alicante que ha estado creando música desde
-              2018. Con su estilo único, compone canciones llenas de emoción y
-              letras que conectan. ¡Déjate llevar por su magia musical!
-            </p>
-          </div>
-          <div className="social-links">
-            <h2>Conéctate</h2>
-            <ul className="social-links">
-              <li>
-                <a
-                  href="https://spotify.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-spotify"></i> {/* Icono de Spotify */}
-                  Spotify
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-youtube"></i> {/* Icono de YouTube */}
-                  YouTube
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-instagram"></i>{" "}
-                  {/* Icono de Instagram */}
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.tiktok.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-tiktok"></i> {/* Icono de TikTok */}
-                  TikTok
-                </a>
-              </li>
-            </ul>
-          </div>
+  // Función de renderizado personalizado para el reloj digital
+  const renderer = ({ hours, minutes, seconds, completed, days }) => {
+    if (completed) {
+      return <h1 className="countdown-text">¡Tiempo agotado!</h1>; // Mensaje cuando termine
+    } else {
+      // Total de horas incluyendo los días restantes
+      const totalHours = days * 24 + hours;
+
+      return (
+        <div className="countdown-display">
+          <h1 className="countdown-text">
+            {totalHours < 10 ? `0${totalHours}` : totalHours}:
+            {minutes < 10 ? `0${minutes}` : minutes}:
+            {seconds < 10 ? `0${seconds}` : seconds}
+          </h1>{" "}
+          {/* Formato hh:mm:ss */}
         </div>
-      </section>
-    </>
+      );
+    }
+  };
+
+  return (
+    <div className="introsection-container">
+      <Countdown date={targetDate} renderer={renderer} />
+    </div>
   );
 };
 
-export default IntroSection;
+export default Introsection;
